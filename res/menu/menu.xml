@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item 
+        android:id="@+id/option"  
+        android:title="Option">
+        <menu>
+            <item 
+                android:id="@+id/main" 
+                android:title="Home"/>
+            
+            <item 
+                android:id="@+id/dataview" 
+                android:title="Data View"/>
+            
+        </menu>
+    </item>
+    
+    <item 
+        android:id="@+id/quitter" 
+        android:title="Quitter"/>
+    
+</menu>

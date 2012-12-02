@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="contacts">
+        <item>id</item>
+        <item>name</item>
+        <item>email</item>
+        <item>adress</item>
+        <item>gender</item>
+        <item>phone</item>
+        <item>mobile</item>
+        <item>home</item>
+        <item>office</item>
+    </string-array>
+</resources>

@@ -9,8 +9,8 @@
                 android:title="Home"/>
             
             <item 
-                android:id="@+id/dataview" 
-                android:title="Data View"/>
+                android:id="@+id/tag_search" 
+                android:title="Search"/>
             
         </menu>
     </item>

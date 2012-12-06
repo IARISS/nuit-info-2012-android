@@ -44,10 +44,10 @@ public class MainActivity extends Activity
     		case R.id.option:
     			Toast.makeText(MainActivity.this, "Option", Toast.LENGTH_SHORT).show();
     			return true;
-    		case R.id.dataview:
-    			Toast.makeText(MainActivity.this, "Data View", Toast.LENGTH_SHORT).show();
-    			Intent settings_intent = new Intent(this,DataView.class);
-    			startActivity(settings_intent);
+    		case R.id.tag_search:
+    			Toast.makeText(MainActivity.this, "Search", Toast.LENGTH_SHORT).show();
+    			Intent search_intent = new Intent(this,TagSearchActivity.class);
+    			startActivity(search_intent);
     			return true;
     		case R.id.quitter:
     			finish();

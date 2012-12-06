@@ -20,36 +20,20 @@
             android:paddingBottom="2dip" />
 		<!-- Description label -->
         <TextView
-            android:id="@+id/email"
+            android:id="@+id/description"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textColor="#acacac"
             android:paddingBottom="2dip">
         </TextView>
-        <!-- Linear layout for cost and price Cost: Rs.100 -->
-        <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <!-- Cost Label -->
-        <TextView
+        <ImageView 
+            android:id="@+id/img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#5d5d5d"
-            android:gravity="left"
-            android:textStyle="bold"
-            android:text="Mobile: " >
-        </TextView>
-        <!-- Price Label -->
-        <TextView
-            android:id="@+id/mobile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#acacac" 
-            android:textStyle="bold"
-            android:gravity="left">
-        </TextView>
-        </LinearLayout>
+            android:gravity="right"
+            android:src="@drawable/ic_launcher"
+            android:contentDescription="@+string/culture"
+            />
     </LinearLayout>
 
 </LinearLayout>

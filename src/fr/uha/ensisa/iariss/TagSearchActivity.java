@@ -6,11 +6,8 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class TagSearchActivity extends Activity 
 {

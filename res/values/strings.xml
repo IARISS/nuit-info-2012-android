@@ -4,5 +4,6 @@
     <string name="app_name">Ndi_Iariss</string>
     <string name="hello_world">Hello World !!</string>
     <string name="menu_settings">Settings</string>
+    <color name="black">#000000</color>
 
 </resources>

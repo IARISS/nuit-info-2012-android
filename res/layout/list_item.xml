@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">  
+    android:orientation="horizontal"
+    >  
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 		<!-- Name Label -->
         <TextView
             android:id="@+id/name"
@@ -17,8 +19,10 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:paddingTop="6dip"
-            android:paddingBottom="2dip" />
-		<!-- Description label -->
+            android:paddingBottom="2dip"
+            android:text="@string/hello_world">
+        </TextView>		
+            <!-- Description label -->
         <TextView
             android:id="@+id/description"
             android:layout_width="fill_parent"

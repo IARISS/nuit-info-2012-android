@@ -12,9 +12,11 @@ import org.json.JSONObject;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -25,7 +27,8 @@ import fr.uha.ensisa.iariss.model.DataController;
 public class DataView extends ListActivity 
 {
     // url to make request
-    private static String url = "http://10.57.110.8/api.php?action=search&value=";
+    //private static String url = "http://10.57.110.8/api.php?action=search&value=";
+    private static String url = "http://10.57.110.32/GIT/nuit-info-2012-web/api.php?action=search&value=";
     
     //Json Node Name
     private static final String TAG_CULTURE = "culture";
@@ -43,7 +46,7 @@ public class DataView extends ListActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dataview);
- 
+        
         // Hashmap for ListView
         ArrayList<HashMap<String, String>> contactList = new ArrayList<HashMap<String, String>>();
  
@@ -62,50 +65,54 @@ public class DataView extends ListActivity
 		}
         // getting JSON string from URL
         JSONObject json = jParser.getJSONFromUrl(url+tags);
- 
-        try 
-        {
-            // Getting Array of Contacts
-            culture = json.getJSONArray(TAG_CULTURE);
- 
-            // looping through All Contacts
-            for(int i = 0; i < culture.length(); i++)
-            {
-                JSONObject c = culture.getJSONObject(i);
- 
-                // Storing each json item in variable
-                String id = c.getString(TAG_ID);
-                String name = c.getString(TAG_NAME);
-                String description = c.getString(TAG_DESCRIPTION);
-                String img = c.getString(TAG_IMG);
-                
-                // Position 
-                //Position position;
-                //= c.getString(TAG_POSITION);
- 
-                // creating new HashMap
-                HashMap<String, String> map = new HashMap<String, String>();
- 
-                // adding each child node to HashMap key => value
-                map.put(TAG_ID, id);
-                map.put(TAG_NAME, name);
-                map.put(TAG_DESCRIPTION, description);
-                map.put(TAG_IMG, img);
-                //map.put()
- 
-                // adding HashList to ArrayList
-                contactList.add(map);
-            }
-        } 
-        catch (JSONException e) 
-        {
-            e.printStackTrace();
-        }
+        
+        //if(!json.equals(null))
+        //{
+	        try 
+	        {
+	            // Getting Array of Contacts
+	            culture = json.getJSONArray(TAG_CULTURE);
+	 
+	            // looping through All Contacts
+	            for(int i = 0; i < culture.length(); i++)
+	            {
+	                JSONObject c = culture.getJSONObject(i);
+	 
+	                // Storing each json item in variable
+	                String id = c.getString(TAG_ID);
+	                String name = c.getString(TAG_NAME);
+	                String description = c.getString(TAG_DESCRIPTION);
+	                String img = c.getString(TAG_IMG);
+	                
+	                // Position 
+	                //Position position;
+	                //= c.getString(TAG_POSITION);
+	 
+	                // creating new HashMap
+	                HashMap<String, String> map = new HashMap<String, String>();
+	 
+	                // adding each child node to HashMap key => value
+	                map.put(TAG_ID, id);
+	                map.put(TAG_NAME, name);
+	                map.put(TAG_DESCRIPTION, description);
+	                map.put(TAG_IMG, img);
+	                //map.put()
+	 
+	                // adding HashList to ArrayList
+	                contactList.add(map);
+	            }
+	        } 
+	        catch (JSONException e) 
+	        {
+	            e.printStackTrace();
+	        }
+        //}
  
         /**
          * Updating parsed JSON data into ListView
          * */
-        
+        if(!contactList.isEmpty())
+        {
         ListAdapter adapter = new SimpleAdapter(this, contactList, R.layout.list_item,
                 new String[] { TAG_NAME, TAG_DESCRIPTION, TAG_IMG }, new int[] {
                         R.id.name, R.id.description, R.id.img });
@@ -134,6 +141,12 @@ public class DataView extends ListActivity
                 startActivity(in);
             }
         });
+        }
+        else
+        {
+        	 TextView error = (TextView) findViewById(R.id.error);
+        	 error.setText("No result found");
+        }
     }
  
 }

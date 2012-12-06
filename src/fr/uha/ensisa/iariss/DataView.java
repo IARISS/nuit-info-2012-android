@@ -19,12 +19,11 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import fr.uha.ensisa.iariss.model.DataController;
-import fr.uha.ensisa.iariss.model.Position;
 
 public class DataView extends ListActivity 
 {
     // url to make request
-    private static String url = "http://api.androidhive.info/contacts/";
+    private static String url = "http://10.57.110.8/";
     
     //Json Node Name
     private static final String TAG_CULTURE = "culture";
@@ -33,7 +32,6 @@ public class DataView extends ListActivity
     private static final String TAG_POSITION = "position";
     private static final String TAG_DESCRIPTION = "description";
     private static final String TAG_IMG = "img";
-    
     
     // contacts JSONArray
     JSONArray culture = null;
@@ -48,9 +46,10 @@ public class DataView extends ListActivity
  
         // Creating JSON Parser instance
         DataController jParser = new DataController();
- 
+        
+        Intent tag = getIntent();
         // getting JSON string from URL
-        JSONObject json = jParser.getJSONFromUrl(url);
+        JSONObject json = jParser.getJSONFromUrl(url+tag.getStringExtra("tag"));
  
         try 
         {

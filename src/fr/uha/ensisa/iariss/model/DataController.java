@@ -57,7 +57,7 @@ public class DataController
         }
         catch (Exception e)
         {
-        	e.printStackTrace();
+        	Log.e("Connection Error", "Error connection  " + e.toString());
         }
  
         try 

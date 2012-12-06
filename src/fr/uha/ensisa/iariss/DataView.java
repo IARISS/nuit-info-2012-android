@@ -36,7 +36,16 @@ public class DataView extends ListActivity
     private static final String TAG_PHONE_MOBILE = "mobile";
     private static final String TAG_PHONE_HOME = "home";
     private static final String TAG_PHONE_OFFICE = "office";
- 
+    
+    //Json new Node Name
+    /*
+    private static final String TAG_ID = "id";
+    private static final String TAG_NAME = "name";
+    private static final String TAG_POSITION = "position";
+    private static final String TAG_DESCRIPTION = "description";
+    private static final String TAG_IMG = "img";
+    */
+    
     // contacts JSONArray
     JSONArray contacts = null;
  

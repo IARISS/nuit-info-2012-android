@@ -14,7 +14,24 @@
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        
     </style>
+    
+    <style name="common">
+        <item name="android:layout_width">fill_parent</item>
+	    <item name="android:layout_height">fill_parent</item>
+	</style>
+	
+	<style name="TextStyle">
+	    <item name="android:layout_width">fill_parent</item>
+	    <item name="android:layout_weight">1</item>
+	    <item name="android:layout_height">fill_parent</item>
+	    <item name="android:text">@string/hello_world</item>
+		<item name="android:background">#99FFFF</item>
+    	<item name="android:textColor">#000</item>
+    	<item name="android:gravity">center</item>
+		<item name="android:paddingLeft">20dip</item>
+    	<item name="android:paddingRight">20dip</item>
+	</style>
 
 </resources>

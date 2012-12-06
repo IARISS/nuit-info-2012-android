@@ -1,7 +1,11 @@
 package fr.uha.ensisa.iariss;
 
+import org.json.JSONObject;
+
+import fr.uha.ensisa.iariss.model.DataController;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -11,11 +15,13 @@ import android.widget.Toast;
 public class MainActivity extends Activity 
 {
 	public static final int RESULT_Main = 1;
+    private static String url = "http://api.androidhive.info/contacts/";
 
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);       
+		setContentView(R.layout.main); 
+		setContentData();
 	}
 
 	public boolean onCreateOptionsMenu(Menu menu)
@@ -49,4 +55,12 @@ public class MainActivity extends Activity
     	}
     	return false;
     }
+
+	private void setContentData() 
+	{
+		//DataController dataController = new DataController();
+		//JSONObject json = dataController.getJSONFromUrl(url);
+		
+		
+	}
 }

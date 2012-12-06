@@ -69,8 +69,18 @@ public final class R {
          */
         public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060001;
+        public static final int TextStyle=0x7f060003;
+        public static final int common=0x7f060002;
+    }
+    public static final class widget {
+        public static final int news1=0x7f090000;
+        public static final int news2=0x7f090001;
+        public static final int news3=0x7f090002;
+        public static final int news4=0x7f090003;
+        public static final int news5=0x7f090004;
+        public static final int news6=0x7f090005;
+        public static final int news7=0x7f090006;
     }
 }

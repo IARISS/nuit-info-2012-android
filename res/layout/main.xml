@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-<TextView  
-    android:layout_width="fill_parent" 
-    android:layout_height="wrap_content" 
-    android:text="@string/hello_world"
-    />
+    android:orientation="vertical" >
+
+    <TextView
+       	style="@+style/TextStyle"
+       	android:id="@+widget/news1" />
+
+    <TextView
+       	style="@+style/TextStyle"
+       	android:id="@+widget/news2" />
+
+    <TextView
+       	style="@+style/TextStyle"
+       	android:id="@+widget/news3" />
+
+    <TextView
+       	style="@+style/TextStyle"
+       	android:id="@+widget/news4" />
+
+    <TextView
+       	style="@+style/TextStyle"
+       	android:id="@+widget/news5" />
+
+    <TextView
+       	style="@+style/TextStyle"
+       	android:id="@+widget/news6" />
+
+    <TextView
+       	style="@+style/TextStyle"
+       	android:id="@+widget/news7" />
+
 </LinearLayout>

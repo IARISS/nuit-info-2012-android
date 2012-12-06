@@ -13,7 +13,10 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import fr.uha.ensisa.iariss.MainActivity;
  
+import android.app.AlertDialog;
 import android.util.Log;
 
 public class DataController 
@@ -22,11 +25,10 @@ public class DataController
     static JSONObject jObj = null;
     static String json = "";
  
-    // constructor
     public DataController() 
     {
     }
- 
+    
     public JSONObject getJSONFromUrl(String url) 
     {
  
@@ -52,6 +54,10 @@ public class DataController
         catch (IOException e) 
         {
             e.printStackTrace();
+        }
+        catch (Exception e)
+        {
+        	e.printStackTrace();
         }
  
         try 

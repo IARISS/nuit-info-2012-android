@@ -1,5 +1,7 @@
 package fr.uha.ensisa.iariss;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
  
@@ -23,7 +25,7 @@ import fr.uha.ensisa.iariss.model.DataController;
 public class DataView extends ListActivity 
 {
     // url to make request
-    private static String url = "http://10.57.110.8/";
+    private static String url = "http://10.57.110.8/api.php?action=search&value=";
     
     //Json Node Name
     private static final String TAG_CULTURE = "culture";
@@ -32,6 +34,7 @@ public class DataView extends ListActivity
     private static final String TAG_POSITION = "position";
     private static final String TAG_DESCRIPTION = "description";
     private static final String TAG_IMG = "img";
+    private static final String TAG_TAGS = "tags";
     
     // contacts JSONArray
     JSONArray culture = null;
@@ -48,8 +51,17 @@ public class DataView extends ListActivity
         DataController jParser = new DataController();
         
         Intent tag = getIntent();
+        String tags = new String();
+        try 
+        {
+			tags = URLEncoder.encode(tag.getStringExtra("tag"),"UTF-8");
+		} 
+        catch (UnsupportedEncodingException e1) 
+		{
+			e1.printStackTrace();
+		}
         // getting JSON string from URL
-        JSONObject json = jParser.getJSONFromUrl(url+tag.getStringExtra("tag"));
+        JSONObject json = jParser.getJSONFromUrl(url+tags);
  
         try 
         {

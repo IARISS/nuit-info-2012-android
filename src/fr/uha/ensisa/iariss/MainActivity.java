@@ -13,17 +13,21 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnFocusChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity 
 {
 	public static final int RESULT_Main = 1;
-    private static String urlRandomTag = "http://10.57.110.32/GIT/nuit-info-2012-web/api.php?action=random&value=8";
+    private static String urlRandomTag = "http://10.57.110.8/api.php?action=random&value=8";
     private ArrayList<TextView> news = new ArrayList<TextView>();
     
 	protected void onCreate(Bundle savedInstanceState) 
@@ -37,7 +41,7 @@ public class MainActivity extends Activity
     {
     	MenuInflater inflater = getMenuInflater();
     	inflater.inflate(R.menu.menu, menu);
-    	menu.getItem(0).getSubMenu().setHeaderIcon(R.drawable.ic_launcher);
+    	menu.getItem(0).getSubMenu().setHeaderIcon(R.drawable.beret);
     	return true;
     }
     
@@ -77,9 +81,22 @@ public class MainActivity extends Activity
         
 		ArrayList<String> tagsList = getRandomTag();
 		
-		news.get(0).setText("Random tag");
+		news.get(0).setText("Tag Aléatoire (Cliquer pour détails)");
 		for(int i=1; i < news.size(); i++)
-			news.get(i).setText("Tag : " + tagsList.get(i));
+		{
+			final TextView tmp = news.get(i);
+			tmp.setText("Tag : " + tagsList.get(i));
+			tmp.setOnClickListener(new OnClickListener()
+	        {			
+				public void onClick(View v) 
+				{
+					// Starting new intent
+	                Intent in = new Intent(getApplicationContext(), DataView.class);
+	                in.putExtra("tag", tmp.getText().toString());
+	                startActivity(in);	
+				}
+	        });		
+		}
 		
 		
 	}
@@ -116,4 +133,9 @@ public class MainActivity extends Activity
 		 
 		 return tagsList;
 	}
+	
+    public void onStop(Bundle savedInstanceState) 
+    {
+        finish();
+    }
 }

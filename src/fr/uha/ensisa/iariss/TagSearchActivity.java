@@ -22,9 +22,17 @@ public class TagSearchActivity extends Activity
 		
 		editText = (EditText) findViewById(R.id.edit);
 		editText.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
-		editText.setLines(3);	
-		editText.setText(" ");
-		
+		editText.setLines(3);
+		editText.setOnClickListener(new OnClickListener()
+        {			
+			public void onClick(View v) 
+			{
+				editText.setText("");
+				editText.setHint("");
+			}
+        });	
+
+				
 		button = (Button) findViewById(R.id.set);
 		editText.setText(R.string.button);
 		button.setText("Envoyer !");

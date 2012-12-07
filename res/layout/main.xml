@@ -3,9 +3,10 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-
+    
     <TextView
        	style="@+style/TextStyle"
+       	android:background="#F5F9FA"
        	android:id="@+widget/news1" />
 
     <TextView

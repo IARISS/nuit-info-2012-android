@@ -25,16 +25,16 @@ import fr.uha.ensisa.iariss.model.DataController;
 public class DataView extends ListActivity 
 {
     // url to make request
-    private static String url = "http://10.57.110.8/api.php?action=search&value=";
+    private static String url = "http://demo.iarissteam.me/api.php?action=search&value=";
     
     //Json Node Name
     private static final String TAG_CULTURE = "culture";
     private static final String TAG_ID = "id";
     private static final String TAG_NAME = "name";
-    private static final String TAG_POSITION = "position";
+    //private static final String TAG_POSITION = "position";
     private static final String TAG_DESCRIPTION = "description";
     private static final String TAG_IMG = "img";
-    private static final String TAG_TAGS = "tags";
+    //private static final String TAG_TAGS = "tags";
     
     // contacts JSONArray
     JSONArray culture = null;

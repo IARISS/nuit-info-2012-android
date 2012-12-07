@@ -1,8 +1,6 @@
 package fr.uha.ensisa.iariss;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -11,23 +9,19 @@ import org.json.JSONObject;
 import fr.uha.ensisa.iariss.model.DataController;
 import android.os.Bundle;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnFocusChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity 
 {
 	public static final int RESULT_Main = 1;
-    private static String urlRandomTag = "http://10.57.110.8/api.php?action=random&value=8";
+    private static String urlRandomTag = "http://demo.iarissteam.me/api.php?action=random&value=8";
     private ArrayList<TextView> news = new ArrayList<TextView>();
     
 	protected void onCreate(Bundle savedInstanceState) 
@@ -119,9 +113,7 @@ public class MainActivity extends Activity
 	                JSONObject c = tags.getJSONObject(i);
 	 
 	                // Storing each json item in variable
-	                String id = c.getString("id");
 	                String name = c.getString("name");
-	                String description = c.getString("tagType");
 	                
 	                tagsList.add(name);
 	            }

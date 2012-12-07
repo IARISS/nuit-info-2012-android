@@ -137,5 +137,6 @@ public class MainActivity extends Activity
     public void onStop(Bundle savedInstanceState) 
     {
         finish();
+        setContentData();
     }
 }

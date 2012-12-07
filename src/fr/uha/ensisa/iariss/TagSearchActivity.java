@@ -21,6 +21,8 @@ public class TagSearchActivity extends Activity
 		setContentView(R.layout.tag_search); 
 		
 		editText = (EditText) findViewById(R.id.edit);
+		editText.setText("");
+		editText.setHint("");
 		editText.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
 		editText.setLines(3);
 		editText.setOnClickListener(new OnClickListener()

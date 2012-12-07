@@ -150,14 +150,12 @@ public class DataView extends ListActivity
         {
         	TextView error = (TextView) findViewById(R.id.error);
        	 	error.setText("Pas de résultat pour ce tag");
-       	 	getListView().setVisibility(1);
         }
     }
     
     public void onStop(Bundle savedInstanceState) 
     {
         finish();
-        getListView().setVisibility(0);
     }
  
 }

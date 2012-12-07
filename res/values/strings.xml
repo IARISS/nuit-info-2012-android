@@ -4,5 +4,6 @@
     <string name="app_name">Le Guide du Beret</string>
     <string name="hello_world">Hello World !!</string>
     <string name="menu_settings">Settings</string>
+    <string name="editdefaut">Tag</string>
 
 </resources>

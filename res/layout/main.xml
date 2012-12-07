@@ -7,7 +7,8 @@
     <TextView
        	style="@+style/TextStyle"
        	android:background="#F5F9FA"
-       	android:id="@+widget/news1" />
+       	android:id="@+widget/news1" 
+       	/>
 
     <TextView
        	style="@+style/TextStyle"

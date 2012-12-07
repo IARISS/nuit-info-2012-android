@@ -4,15 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-	<EditText 
-      android:id="@+id/edit"
-	  android:layout_width="fill_parent"
-	  android:layout_height="wrap_content" 
-	  android:hint="@+string/editText"
-	  android:inputType="textMultiLine"
-	  android:lines="5" 
-	  android:text="@+string/tag"
-	  />
+	<EditText
+	    android:id="@+id/edit"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:inputType="textMultiLine"
+	    android:lines="3"
+	    android:text=" "/>
   
 	<Button 
    	  android:id="@+id/set"

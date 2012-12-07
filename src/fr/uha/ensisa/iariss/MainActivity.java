@@ -1,5 +1,11 @@
 package fr.uha.ensisa.iariss;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import fr.uha.ensisa.iariss.model.DataController;
@@ -7,16 +13,19 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity 
 {
 	public static final int RESULT_Main = 1;
-    private static String url = "http://api.androidhive.info/contacts/";
-
+    private static String urlRandomTag = "http://10.57.110.32/GIT/nuit-info-2012-web/api.php?action=random&value=8";
+    private ArrayList<TextView> news = new ArrayList<TextView>();
+    
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
@@ -56,11 +65,55 @@ public class MainActivity extends Activity
     	return false;
     }
 
-	private void setContentData() 
+	public void setContentData() 
 	{
-		//DataController dataController = new DataController();
-		//JSONObject json = dataController.getJSONFromUrl(url);
+        news.add((TextView) findViewById(R.widget.news1));
+        news.add((TextView) findViewById(R.widget.news2));
+        news.add((TextView) findViewById(R.widget.news3));
+        news.add((TextView) findViewById(R.widget.news4));
+        news.add((TextView) findViewById(R.widget.news5));
+        news.add((TextView) findViewById(R.widget.news6));
+        news.add((TextView) findViewById(R.widget.news7));
+        
+		ArrayList<String> tagsList = getRandomTag();
+		
+		news.get(0).setText("Random tag");
+		for(int i=1; i < news.size(); i++)
+			news.get(i).setText("Tag : " + tagsList.get(i));
 		
 		
+	}
+	
+	public ArrayList<String> getRandomTag()
+	{
+		DataController jParser = new DataController();
+		JSONObject json = jParser.getJSONFromUrl(urlRandomTag);
+		
+		JSONArray tags = null;
+		ArrayList<String> tagsList = new ArrayList<String>();
+		 try 
+	        {
+	            // Getting Array of Contacts
+	            tags = json.getJSONArray("tag");
+	 
+	            // looping through All Contacts
+	            for(int i = 0; i < tags.length(); i++)
+	            {
+	                JSONObject c = tags.getJSONObject(i);
+	 
+	                // Storing each json item in variable
+	                String id = c.getString("id");
+	                String name = c.getString("name");
+	                String description = c.getString("tagType");
+	                
+	                tagsList.add(name);
+	            }
+	        } 
+	        catch (JSONException e) 
+	        {
+	            e.printStackTrace();
+	        }
+		 
+		 return tagsList;
 	}
 }

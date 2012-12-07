@@ -30,14 +30,6 @@
             android:textColor="#acacac"
             android:paddingBottom="2dip">
         </TextView>
-        <ImageView 
-            android:id="@+id/img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:src="@drawable/ic_launcher"
-            android:contentDescription="@+string/culture"
-            />
     </LinearLayout>
 
 </LinearLayout>

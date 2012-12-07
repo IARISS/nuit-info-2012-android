@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -21,8 +22,8 @@ public class TagSearchActivity extends Activity
 		
 		editText = (EditText) findViewById(R.id.edit);
 		editText.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
-		editText.setLines(3);
-		editText.setText("Tag");
+		editText.setLines(3);	
+		editText.setText(" ");
 		
 		button = (Button) findViewById(R.id.set);
 		editText.setText(R.string.button);

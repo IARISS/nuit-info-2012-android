@@ -4,27 +4,23 @@
   android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
-  <TextView android:id="@+id/name_label"
+  <TextView
+            android:id="@+id/name_label"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
+            android:textColor="#43bd00"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:padding="10dip"
-            android:textColor="#ffffff"/>
-  
-  <TextView android:id="@+id/email_label"
+            android:paddingTop="6dip"
+            android:paddingBottom="2dip"
+            android:text="@string/hello_world">
+        </TextView>		
+            <!-- Description label -->
+        <TextView
+            android:id="@+id/description_label"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:padding="10dip"
-            android:textColor="#ffffff"/>
-  
-  <TextView android:id="@+id/mobile_label"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:padding="10dip"
-            android:textColor="#ffffff"/>
+            android:textColor="#acacac"
+            android:paddingBottom="2dip">
+        </TextView>
 </LinearLayout>

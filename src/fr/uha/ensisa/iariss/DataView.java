@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
@@ -46,7 +47,7 @@ public class DataView extends ListActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dataview);
-        
+
         // Hashmap for ListView
         ArrayList<HashMap<String, String>> contactList = new ArrayList<HashMap<String, String>>();
  
@@ -83,10 +84,6 @@ public class DataView extends ListActivity
 	                String name = c.getString(TAG_NAME);
 	                String description = c.getString(TAG_DESCRIPTION);
 	                String img = c.getString(TAG_IMG);
-	                
-	                // Position 
-	                //Position position;
-	                //= c.getString(TAG_POSITION);
 	 
 	                // creating new HashMap
 	                HashMap<String, String> map = new HashMap<String, String>();
@@ -114,11 +111,15 @@ public class DataView extends ListActivity
         if(!contactList.isEmpty())
         {
         ListAdapter adapter = new SimpleAdapter(this, contactList, R.layout.list_item,
-                new String[] { TAG_NAME, TAG_DESCRIPTION, TAG_IMG }, new int[] {
-                        R.id.name, R.id.description, R.id.img });
+                new String[] { TAG_NAME, TAG_DESCRIPTION }, new int[] {
+                        R.id.name, R.id.description });
  
+        //WebView wv = (WebView)adapter.getItem(R.id.img);
+        //wv.getSettings().setJavaScriptEnabled(true);
+		//wv.loadUrl();
+        
         setListAdapter(adapter);
- 
+        	
         // selecting single ListView item
         ListView lv = getListView();
  
@@ -131,16 +132,18 @@ public class DataView extends ListActivity
                 // getting values from selected ListItem
                 String name = ((TextView) view.findViewById(R.id.name)).getText().toString();
                 String description = ((TextView) view.findViewById(R.id.description)).getText().toString();
-                String img = ((TextView) view.findViewById(R.id.img)).getText().toString();
+                //String img = ((TextView) view.findViewById(R.id.img)).getText().toString();
  
                 // Starting new intent
                 Intent in = new Intent(getApplicationContext(), SingleDataView.class);
                 in.putExtra(TAG_NAME, name);
                 in.putExtra(TAG_DESCRIPTION, description);
-                in.putExtra(TAG_IMG, img);
+                //in.putExtra(TAG_IMG, img);
                 startActivity(in);
             }
         });
+        TextView error = (TextView) findViewById(R.id.error);
+   	 	error.setText("");
         }
         else
         {
